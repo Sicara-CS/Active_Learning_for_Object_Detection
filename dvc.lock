@@ -1,0 +1,106 @@
+schema: '2.0'
+stages:
+  al_loop:
+    cmd: python demo.py --params parameters.yaml --data data/coco_cars.yaml
+    deps:
+    - path: data/coco_cars.yaml
+      md5: 1f457a812f1b31c9cd39b80ec8069041
+      size: 109
+    - path: demo.py
+      md5: 8e18ffb6c07d1b558dad833089388a4a
+      size: 14843
+    - path: query_strategies/data.py
+      md5: 78e72e8f34e2689d1a1c184761194c62
+      size: 2914
+    - path: query_strategies/strategy.py
+      md5: b3c9cf6d9ee770298d88847b8a44ca9e
+      size: 12883
+    - path: yolov5/detect_al.py
+      md5: 8b54973c24c39a453b7d4a9cca6b9ce9
+      size: 16287
+    - path: yolov5/train.py
+      md5: 1645dca5de1ddb55cdd67b176efc2cb1
+      size: 34440
+    - path: yolov5/val.py
+      md5: 0292259df544ac6d30bd14e2127a4f01
+      size: 20598
+    params:
+      parameters.yaml:
+        active learning:
+          n_query: 1
+          n_rounds: 1
+          val_size: 50
+          test_size: 100
+          n_init_labeled: 10
+          n_candidates: 1000
+          n_runs: 1
+          strategy_name: Hybrid
+          project: results
+          weights: best
+          fine_tune: false
+          alpha: 0.8
+        detect:
+          imgsz:
+          - 640
+          - 640
+          init_conf_thres: []
+          final_conf_thres: 0.1
+          iou_thres: 0.45
+          max_det: 1000
+          view_img: false
+          save_crop: false
+          classes:
+          augment: false
+          half: false
+          get_embeddings: true
+        test:
+          batch_size: 16
+          imgsz: 640
+          conf_thres: 0.001
+          iou_thres: 0.6
+          max_det: 300
+          task: test
+          single_cls: false
+          half: false
+          augment: false
+          save_txt: false
+          save_hybrid: false
+          save_conf: false
+          save_json: false
+          plots: false
+        train:
+          cfg: models/architecture/yolov5n.yaml
+          weights: models/weights/yolov5n.pt
+          hyp: hyps/hyp.no-augmentation.yaml
+          init_batch_size: []
+          final_batch_size: 16
+          init_epochs: []
+          final_epochs: 2
+          patience: 5
+          freeze:
+          - 10
+          seed: 733
+          imgsz: 640
+          resume: false
+          nosave: false
+          noval: false
+          noplots: true
+          single_cls: false
+          optimizer: SGD
+          cos_lr: false
+    outs:
+    - path: results/AL/cost.csv
+      md5: 80a744c71366e070e08e8608208e7196
+      size: 40
+    - path: results/AL/description.csv
+      md5: 9866ba7e3bb90b31fbe2323ecd9e2fe6
+      size: 92
+    - path: results/AL/maps.csv
+      md5: 00bb594a045ba8476bf671eaefce50c2
+      size: 66
+    - path: results/AL/results.csv
+      md5: 5853914e70e385dfe77473b6ecbab9b2
+      size: 212
+    - path: results/AL/time.csv
+      md5: aa284b65fe720665e4a878e20e6a6d24
+      size: 167

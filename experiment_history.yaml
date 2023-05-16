@@ -1,0 +1,164 @@
+MaxProba:
+  Freeze_10:
+    - aa14445
+    - 04da39b
+    - f86dfc2
+    - Moving thresh:
+      - c019afc
+      - d9ebe0e
+      - 4e52b57
+      - With 3 values:
+        - 25a452d
+        - 09206a8
+        - 0d14406
+  Freeze_24:
+    - f86dfc2
+    - 6c13825
+    - 3829d62
+Random:
+  - 0016f9a
+  - ef787ef
+  - 61f21ec
+
+# Final experiments
+WorstConfidence:
+  - 5e3b8ce
+  - 7afa435
+  - fcbd2b1
+  # bonus
+  - ddbb2fb
+Random:
+  - 662b1d9
+  - 627bd29
+  - 28a75a5
+Entropy : 
+  - 3768528 
+  - b56da2c
+  - 9309bf2
+BALD : 
+  - 8125ce5
+  - 8c411dd
+  - cefa912
+Fine tune (alpha=1):
+  - 4ce3c1d
+  - e031f1d
+  - c32b8f9
+Fine tune (alpha=0.5):
+  - 64b2869
+  - 86ce953
+  - e765b7d
+Fine tune (alpha=0.8):
+  - 61c753f
+  - 8f1038b
+  - 2f7feeb
+Freeze 24:
+  - 076601d
+  - e2b2ced
+  - dab77b2
+Moving batch (4 values):
+  - a236624
+ Big model:
+  - 93fbcc4
+  - 75583d3
+  - 3325cad
+EntropyMean : 
+  - b6fe592
+  - 487e4de
+  - e633637
+
+# Final with entro 
+Moving batch:
+  - ed1c267
+  - ed48e7a
+  - 800c04e
+Fine-tune (1):
+  - d943557
+  - ccbed7f
+  - 23701e7
+Fine-tune (0.8):
+  - 271bd2d
+  - 7f109f5
+  - 7b21131
+Fine-tune (0.5):
+  - a8b502f
+  - ce6c56d
+  - f69eef2
+Freeze:
+  - be663e3
+  - 01b2b4b
+  - 3f11368
+20 epochs:
+  - 5f3c9b7
+5 epochs:
+  - 06b2f9d
+100 queries:
+  - 4cda0b3
+  - eea5046
+30 epochs random:
+  - 340efa8
+30 epochs:
+  - e64ecbd
+Random 100:
+  - 36f5e81
+  - b378aa3
+  - 2c01bcb
+Augmentation:
+  - 081a097
+BALD 100:
+  - 770d7bb
+  - f9f9ca3
+  - 8685ca2
+EntropyMean 100 : 
+  - 58c2d8c
+  - 4cda0b3
+  - eea5046
+Entropy 100 : 
+  - 61b1ecf
+  - 5e40a03
+  - 508f0b6
+BaldMean 100 : 
+  - eb8bcc2
+  - f64102b
+  - fb1ffac
+
+
+# Coreset
+
+Coreset 10_50 :
+  - a1d808a
+  - 4fcb153
+  - 9715e67
+  
+Coreset 100_20 :
+  - 210a7a7
+  - ce7eb2a
+  - 2b5624b
+
+# Hybrid
+Hybrid_Coreset_Entropy 10_50 :
+  - 58c476b
+  - 5e26071
+  - 0a87418
+
+
+HybridKM_EntropyMean 10_50 :
+  - 96a9a13
+  - 490c12f
+  - 9d29a2e
+
+HybridKM_Entropy 10_50 :
+  - 6c256b1
+  - e282928
+  
+
+HybridKM_EntropyMean 10_100 :
+  - c7777ac
+  - aa345dd
+  - 821b91f
+
+HybridKM_EntropyMean 100_20_3runs : 
+  - c41d6df
+  - c41d6df
+  - c41d6df
+
+

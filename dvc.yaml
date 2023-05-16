@@ -1,0 +1,25 @@
+stages:
+  al_loop:
+    cmd: python demo.py --params parameters.yaml --data data/coco_cars.yaml
+    params:
+      - parameters.yaml:
+    deps:
+      - data/coco_cars.yaml
+      - demo.py
+      - yolov5/train.py
+      - yolov5/val.py
+      - yolov5/detect_al.py
+      - query_strategies/strategy.py
+      - query_strategies/data.py
+    metrics:
+      - results/AL/results.csv:
+          cache: false
+      - results/AL/maps.csv:
+          cache: false
+      - results/AL/cost.csv:
+          cache: false
+      - results/AL/description.csv:
+          cache: false
+      - results/AL/time.csv:
+          cache: false
+

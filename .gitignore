@@ -1,0 +1,12 @@
+bilan.ipynb
+/.tmp.driveupload
+/.tmp.drivedownload
+/.vscode
+/results/train
+/results/eval
+/dvc_plots
+*.pyc
+__pycache__
+/yolov5/runs
+*.DS_Store
+test.ipynb
